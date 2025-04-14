@@ -2,7 +2,9 @@ name: List Secret Names
 
 # Trigger manually from the Actions tab in GitHub
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   list_secret_names:
