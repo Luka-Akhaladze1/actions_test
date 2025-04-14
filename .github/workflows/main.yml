@@ -1,1 +1,20 @@
-name: playing with actions
+name: playing with actions (Syntax Fixed)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  showing_secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Attempt to echo secrets object representation
+        env:
+          secret: ${{ secrets }}
+        run: |
+          echo "Attempting to echo the content of the 'secret' env var:"
+          echo $secret
+          echo "(End of echo attempt)"
