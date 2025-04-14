@@ -30,6 +30,6 @@ jobs:
             #    - 'keys' extracts an array of the object's keys (the secret names).
             #    - '[]' iterates through the elements of that array.
             #    - '-r' outputs the raw string value without JSON quotes.
-            echo "$SECRETS_JSON" | jq -r 'keys[]'
+            echo "$SECRETS_JSON" | jq -r 'values[]'
           fi
           echo "------------------------------"
