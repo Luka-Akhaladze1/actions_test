@@ -1,0 +1,13 @@
+# Filename: your-org/microservice-a/.github/workflows/sync-secrets.yml
+name: Sync Secrets to AWS SM
+
+on:
+  push:
+    branches:
+      - main # Or whichever branch triggers your sync
+
+jobs:
+  call_reusable_sync:
+    name: Call Reusable Sync Workflow
+    uses: Mercury-Tech-Center/reusable/.github/workflows/secrets.yml@main
+    secrets: inherit
